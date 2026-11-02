@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VW2VT2EJGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VW2VT2EJGY');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditi Mahajan - Product Manager</title>
@@ -11,8 +20,8 @@
         :root {
             --primary: #1a1a2e;
             --secondary: #16213e;
-            --accent: #e94560;
-            --accent-light: #ff6b85;
+            --accent: #475569;
+            --accent-light: #64748b;
             --text: #2d2d2d;
             --text-light: #666;
             --bg: #fafafa;
@@ -57,7 +66,7 @@
         /* Header/Name Section */
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
             animation: fadeInDown 0.8s ease-out;
         }
 
@@ -89,6 +98,114 @@
             font-weight: 400;
             margin-top: 25px;
             letter-spacing: 0.5px;
+        }
+
+        /* Sticky Navigation - Sleek Professional Design */
+        .section-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 0;
+            margin-bottom: 50px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-link {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            padding: 20px 28px;
+            transition: all 0.2s ease;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-link.active {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Center navigation items */
+        .section-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header Action Icons */
+        .header-actions {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .action-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            padding: 8px;
+        }
+
+        .action-icon svg {
+            stroke: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .action-icon span {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .action-icon:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .action-icon:hover svg {
+            stroke: var(--accent);
+        }
+
+        .cta-icon {
+            font-size: 1.2rem;
         }
 
         /* Section Styling */
@@ -175,7 +292,7 @@
 
         .skill-category {
             display: grid;
-            grid-template-columns: 220px 1fr;
+            grid-template-columns: 280px 1fr;
             background: var(--card);
             transition: background 0.25s ease;
         }
@@ -192,7 +309,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            padding: 24px 20px 24px 28px;
+            padding: 18px 20px 18px 28px;
             border-right: 1px solid rgba(0,0,0,0.05);
             position: relative;
         }
@@ -211,6 +328,13 @@
             font-size: 1.3rem;
             flex-shrink: 0;
             margin-top: 2px;
+            color: var(--accent);
+        }
+
+        .skill-icon svg {
+            width: 22px;
+            height: 22px;
+            display: block;
         }
 
         .skill-header h3 {
@@ -218,39 +342,430 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary);
+            margin: 0 0 4px 0;
+            line-height: 1.4;
+        }
+
+        .skill-context {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .company-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        /* Case Studies Section */
+        .case-studies-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .case-study-card {
+            background: var(--card);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .case-study-card:hover {
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.15);
+        }
+
+        .case-study-header {
+            padding: 35px 40px 25px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            background: linear-gradient(to bottom, rgba(233, 69, 96, 0.02), transparent);
+        }
+
+        .case-study-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 12px 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .case-study-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .case-study-content {
+            padding: 35px 40px;
+        }
+
+        .case-section {
+            margin-bottom: 30px;
+        }
+
+        .case-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-section h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .case-section h4::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            display: block;
+        }
+
+        .case-section p {
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .case-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .case-section ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .case-section ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .timeline-item {
+            padding: 18px 20px;
+            background: rgba(0, 0, 0, 0.02);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .timeline-item strong {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .results {
+            background: linear-gradient(to bottom right, rgba(233, 69, 96, 0.03), rgba(255, 107, 133, 0.02));
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 20px 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .metric-value {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .impact-chart {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .impact-chart img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* BoloBit case study: demo links */
+        .case-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .case-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .case-cta a.primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .case-cta a:hover,
+        .case-cta a:focus-visible {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: #ffffff;
+        }
+
+        .impact-chart a {
+            display: inline-block;
+        }
+
+        /* Recommendations Section */
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .recommendation-card {
+            background: var(--card);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(71, 85, 105, 0.15);
+        }
+
+        .recommendation-screenshot {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Professional Credentials Section */
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding-top: 20px;
+        }
+
+        .author-info h4 {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0 0 4px 0;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
             margin: 0;
             line-height: 1.4;
         }
 
+        .author-context {
+            font-size: 0.8rem !important;
+            color: var(--accent) !important;
+            font-weight: 500;
+            margin-top: 4px !important;
+        }
+
         .skill-list {
             list-style: none;
-            padding: 20px 28px;
+            padding: 18px 28px;
             margin: 0;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px 20px;
-            align-content: center;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
         }
 
         .skill-list li {
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: var(--text);
             line-height: 1.5;
-            padding: 6px 14px;
-            background: rgba(0,0,0,0.03);
-            border-radius: 20px;
-            white-space: nowrap;
+            padding: 0;
+            background: none;
+            border-radius: 0;
+            white-space: normal;
             transition: all 0.2s ease;
         }
 
         .skill-list li:hover {
-            background: rgba(233, 69, 96, 0.08);
-            color: var(--accent);
+            background: none;
+            color: var(--text);
         }
 
         .skill-list li strong {
             font-weight: 600;
             color: var(--primary);
+            display: inline;
+        }
+
+        /* Professional Credentials Section */
+        .credentials-container {
+            margin-top: 30px;
+        }
+
+        .credentials-intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .credentials-intro p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .credential-item {
+            background: var(--card);
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--accent);
+        }
+
+        .credential-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.15);
+        }
+
+        .credential-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        .credential-icon svg {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+
+        .credential-details h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .credential-issuer {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin: 0 0 4px 0;
+            font-weight: 500;
+        }
+
+        .credential-year {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin: 0;
         }
 
         .portfolio-grid {
@@ -466,6 +981,24 @@
                 font-size: 1rem;
             }
 
+            .section-nav {
+                overflow-x: auto;
+                overflow-y: hidden;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .section-nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            .nav-link {
+                font-size: 0.8rem;
+                padding: 18px 20px;
+                white-space: nowrap;
+            }
+
             .section-title {
                 font-size: 1.5rem;
             }
@@ -492,9 +1025,90 @@
                 white-space: normal;
             }
 
+            .case-study-header {
+                padding: 25px 25px 20px;
+            }
+
+            .case-study-title {
+                font-size: 1.4rem;
+            }
+
+            .case-study-content {
+                padding: 25px;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .metric-value {
+                font-size: 1.8rem;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .header-actions {
+                gap: 24px;
+            }
+
+            .action-icon span {
+                font-size: 0.75rem;
+            }
+
             .portfolio-grid,
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles for PDF Download */
+        @media print {
+            body {
+                background: white;
+            }
+
+            body::before {
+                display: none;
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .section-nav {
+                display: none;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 30px;
+            }
+
+            .case-study-card {
+                page-break-inside: avoid;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
             }
         }
 
@@ -525,25 +1139,78 @@
             color: var(--accent);
             font-weight: bold;
         }
+        /* Phone layout: keep every section inside the screen width (no sideways scroll) */
+        @media (max-width: 768px) {
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-nav {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Aditi Mahajan</h1>
-            <p class="tagline">Product Manager • AI & Platform Products • I Ship Products That Work</p>
+            <p class="tagline">Senior Product Manager • AI Products • B2B SaaS • 0→1 Product Builder</p>
+            <div class="header-actions">
+                <a href="mailto:aditimahajan15@outlook.com" class="action-icon" title="Get In Touch">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Email</span>
+                </a>
+                <a href="https://calendly.com/aditi_mahajan/" target="_blank" class="action-icon" title="Schedule a Call">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>Schedule</span>
+                </a>
+                <a href="https://www.linkedin.com/in/aditi-mahajan" target="_blank" class="action-icon" title="LinkedIn Profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="./Aditi_Mahajan_Resume.pdf" download="Aditi_Mahajan_Resume.pdf" class="action-icon" title="Download Resume">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Resume</span>
+                </a>
+            </div>
         </header>
+
+        <nav class="section-nav">
+            <a href="#summary" class="nav-link">Summary</a>
+            <a href="#skills" class="nav-link">Expertise</a>
+            <a href="#case-studies" class="nav-link">Featured Work</a>
+            <a href="#recommendations" class="nav-link">Recommendations</a>
+            <a href="#portfolio" class="nav-link">Credentials</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
         <section id="summary">
             <h2 class="section-title">Executive Summary</h2>
             <div class="summary-content">
-                <p>Product Manager with <span class="highlight">10+ years shipping products</span> that solve real problems and drive measurable business impact across enterprise media, consumer platforms, and startups.</p>
-                
-                <p>I build products from scratch and fix broken ones. At Viacom18, I shipped a cloud-based AdOps platform that delivered <span class="highlight">$1M in annual savings</span> and 4% YoY revenue growth while mentoring teams to own complex broadcast systems. At High Furtados, I rescued a stalled product, introduced Agile, aligned cross-functional teams, and delivered within three months—earning a promotion and proving execution under pressure.</p>
-                
-                <p>From 2021–2025, I took a strategic sabbatical to manage family priorities while deepening expertise in AI and product strategy through certifications from <span class="highlight">Stanford (ML), IBM (AI Developer), and Scrum Alliance (CSPO)</span>. Built AI projects, strengthened data analysis skills (SQL, Tableau), and stayed current on emerging product trends.</p>
-                
-                <p>Now seeking Product Manager roles in <span class="highlight">AI-powered products, ads monetization platforms, and B2B/B2C platform teams</span> across California. I ship products that users love and businesses depend on.</p>
+                <p>Product leader and founder with <span class="highlight">10+ years across product management, engineering and 0→1 development</span>. I operate like an owner: at every step, I go after the problem with the biggest business lever, build the product that moves it, and measure the result in dollars, hours and customers.</p>
+
+                <p>Founder of <span class="highlight">BoloBit</span>, an AI-powered B2B survey and insights platform I built and shipped end to end, from strategy and UX through engineering and cloud delivery. It automates survey creation and turns post-survey analysis into recommended next actions, cutting insight-to-decision time from days to under two hours.</p>
+
+                <p>At Viacom18, I built a 0→1 ads optimization engine that replaced a third-party tool, delivering <span class="highlight">$1M in annual savings</span>, 4% year-over-year revenue growth and 10,000+ man-hours automated each month. At High Furtados, I revived a product stalled for 18 months and shipped its MVP in three months.</p>
+
+                <p>Seeking Senior Product Manager roles in <span class="highlight">AI products, B2B SaaS and ads and platform teams</span>. Based in Los Angeles, CA.</p>
             </div>
         </section>
 
@@ -552,78 +1219,375 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="skill-header">
-                        <div class="skill-icon">🎯</div>
-                        <h3>Product Strategy & Execution</h3>
+                        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+                        <div>
+                            <h3>AI Products</h3>
+                            <p class="skill-context">
+                                <span class="company-badge">BoloBit</span>
+                                AI-powered survey and insights platform, built 0→1
+                            </p>
+                        </div>
                     </div>
                     <ul class="skill-list">
-                        <li>0→1 Product Development</li>
-                        <li>Revenue & Monetization Platforms</li>
-                        <li>Product Metrics & KPIs</li>
-                        <li>Roadmap & Prioritization</li>
-                        <li>Cross-functional Leadership</li>
+                        <li><strong>LLM Integration:</strong> Claude API for AI survey design and response analysis</li>
+                        <li><strong>Insight Design:</strong> Sentiment, behavior and intent analysis; automated &ldquo;What&rdquo; and &ldquo;Next&rdquo; recommendations</li>
+                        <li><strong>AI-Assisted Delivery:</strong> Claude Code to accelerate implementation and debugging, with human review and validation</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
                     <div class="skill-header">
-                        <div class="skill-icon">✨</div>
-                        <h3>User Experience & Product Design</h3>
+                        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+                        <div>
+                            <h3>0→1 Builds & Turnarounds</h3>
+                            <p class="skill-context">
+                                New products from zero; stalled products to launch
+                            </p>
+                        </div>
                     </div>
                     <ul class="skill-list">
-                        <li>End-to-End Journey Optimization</li>
-                        <li>B2B & B2C Product UX</li>
-                        <li>Intuitive Product Simplification</li>
-                        <li>User Research & Beta Testing</li>
-                        <li>Wireframing (Axure RP, Balsamiq)</li>
+                        <li><strong>0→1 Products:</strong> BoloBit; Viacom18 ads optimization engine; Snaptasker B2B marketplace MVP in four months</li>
+                        <li><strong>Turnaround:</strong> High Furtados product stalled for 18 months, MVP shipped in three months</li>
+                        <li><strong>Product Craft:</strong> Discovery, UX, roadmaps, OKRs/KPIs, Agile/Scrum, go-to-market</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
                     <div class="skill-header">
-                        <div class="skill-icon">⚡</div>
-                        <h3>Technical & Data Fluency</h3>
+                        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+                        <div>
+                            <h3>Ads Monetization & Enterprise B2B</h3>
+                            <p class="skill-context">
+                                <span class="company-badge">Viacom18</span>
+                                Broadcast ads revenue and six enterprise B2B applications
+                            </p>
+                        </div>
                     </div>
                     <ul class="skill-list">
-                        <li>Full-Stack Engineering Background</li>
-                        <li>20+ API & Platform Integrations</li>
-                        <li>SQL · Tableau · A/B Testing</li>
-                        <li>React · Node.js · MongoDB · AWS</li>
-                        <li>IBM AI Developer · Stanford ML</li>
+                        <li><strong>Revenue Optimization:</strong> In-house ads engine replacing a third-party tool across broadcast channels</li>
+                        <li><strong>Vendor & Stakeholder Leadership:</strong> Five external vendors, including two development partners; three-year audit cycles with Deloitte, EY and Reliance</li>
+                        <li><strong>Integration & Delivery:</strong> 20+ API integrations; CI/CD with Jenkins</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
                     <div class="skill-header">
-                        <div class="skill-icon">🚀</div>
-                        <h3>Delivery & Operations Excellence</h3>
+                        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
+                        <div>
+                            <h3>Technical & Data Fluency</h3>
+                            <p class="skill-context">
+                                <span class="company-badge">Tesco</span>
+                                Former full-stack developer; Tesco Hackathon winner, 2013
+                            </p>
+                        </div>
                     </div>
                     <ul class="skill-list">
-                        <li>Agile / Scrum Certified (CSPO)</li>
-                        <li>Deloitte · EY · Reliance Audits</li>
-                        <li>Technical Vendor Negotiation</li>
-                        <li>10,000+ Man-hours Automated</li>
-                        <li>CI/CD via Jenkins</li>
+                        <li><strong>Engineering:</strong> Node.js, Python/FastAPI, React, PostgreSQL, MongoDB, REST APIs</li>
+                        <li><strong>Cloud:</strong> AWS (EC2, RDS, S3, CloudFront), CI/CD</li>
+                        <li><strong>Data:</strong> SQL, Tableau, A/B testing, ML features (Random Forest)</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio">
-            <h2 class="section-title">Professional Credentials</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="card-icon">🎓</div>
-                    <h3 class="card-title">Certifications</h3>
-                    <p class="card-description">Stanford ML, IBM AI Developer, CSPO—continuous learning backed by credentials that matter</p>
-                    <label for="cert-upload" class="upload-area">
-                        <div class="upload-icon">📄</div>
-                        <div class="upload-text">
-                            <strong>Upload Certificates</strong>
-                            Click to select files or drag and drop
+        <section id="case-studies">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="case-studies-grid">
+
+                <!-- Case Study 0: BoloBit (founder, current) -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="company-badge">BoloBit · Founder</span>
+                        <h3 class="case-study-title">Building BoloBit: AI Surveys That Find the Customers Who Are Quietly Leaving</h3>
+                        <p class="case-study-subtitle">0→1 AI Feedback Intelligence Platform | 2025–Present</p>
+                    </div>
+
+                    <div class="case-study-content">
+                        <div class="case-section">
+                            <h4>The Challenge</h4>
+                            <p>Satisfaction is not loyalty. Most survey tools measure only how customers feel, so the accounts that are content but using the product less and wavering on renewal never show up until they churn. Designing a good survey, launching it and turning the answers into action also takes days of manual work.</p>
                         </div>
-                    </label>
-                    <input type="file" id="cert-upload" multiple accept=".pdf,.jpg,.jpeg,.png">
-                    <div class="file-preview" id="cert-preview"></div>
+
+                        <div class="case-section">
+                            <h4>My Approach</h4>
+                            <p><strong>Describe it:</strong> A business describes what it needs to learn in one sentence; BoloBit drafts the survey with AI and tags every question with the signal it measures: Sentiment, Behaviour or Intent.</p>
+                            <p><strong>Launch it:</strong> Shared by link, QR code, short code or email; respondents answer on any device with no account.</p>
+                            <p><strong>Act on it:</strong> When the survey closes, each answer is verified against what its question was designed to measure, the three signals are crossed per customer, and the report names who is at risk, why, and the next step for each account.</p>
+                        </div>
+
+                        <div class="case-section results">
+                            <h4>Where It Stands</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">3 Signals</div>
+                                    <div class="metric-label">Sentiment · Behaviour · Intent per Customer</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">1 Sentence</div>
+                                    <div class="metric-label">From Idea to a Drafted Survey</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">406</div>
+                                    <div class="metric-label">Automated Checks Passing on Release R1</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">Live Demo</div>
+                                    <div class="metric-label">Interactive Product Walkthrough</div>
+                                </div>
+                            </div>
+
+                            <div class="impact-chart">
+                                <a href="bolobit-demo/" aria-label="Open the BoloBit interactive demo">
+                                    <img src="bolobit_featured.png" alt="BoloBit: Satisfaction is not loyalty. The easiest way to design and launch customer surveys, with verified insights and account-level actions ready at close." loading="lazy">
+                                </a>
+                            </div>
+
+                            <div class="case-cta">
+                                <a class="primary" href="bolobit-demo/">Try the interactive demo →</a>
+                            </div>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>Owner&rsquo;s Lens</h4>
+                            <p>The customers who leave quietly are the market sentiment-only tools miss. I built BoloBit end to end to own that gap, and I am validating it against real renewal outcomes before scaling it.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 1: Viacom18 -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="company-badge">Viacom18</span>
+                        <h3 class="case-study-title">Building an Internal Ads Optimization Engine to Replace Third-Party Tools</h3>
+                        <p class="case-study-subtitle">0→1 Cloud-Based AdOps Platform | 2018-2021</p>
+                    </div>
+                    
+                    <div class="case-study-content">
+                        <div class="case-section">
+                            <h4>The Challenge</h4>
+                            <p>Viacom18 relied on expensive third-party tools for revenue optimization across limited channels. Built internal platform to scale across all broadcast channels while handling 100+ unique business constraints.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>My Approach</h4>
+                            <p><strong>Mathematical Framework:</strong> Applied permutation-combination methodology to systematically map all constraint scenarios and ensure complete coverage.</p>
+                            <p><strong>Stakeholder Alignment:</strong> Collaborated with VP-level leadership and business stakeholders to translate technical scenarios into actionable business requirements.</p>
+                            <p><strong>Execution:</strong> Managed 2 major vendors, coordinated cross-functional teams, delivered MVP in 4 months and full V1.0 in 9 months.</p>
+                        </div>
+
+                        <div class="case-section results">
+                            <h4>Impact</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">$1M</div>
+                                    <div class="metric-label">Perpetual Annual Savings</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">4%</div>
+                                    <div class="metric-label">YoY Revenue Growth</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">10K+</div>
+                                    <div class="metric-label">Man-Hours Saved Monthly</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">Multiple Channels</div>
+                                    <div class="metric-label">Expanded Coverage</div>
+                                </div>
+                            </div>
+                            
+                            <div class="impact-chart">
+                                <img src="viacom18_impact.png" alt="Viacom18 $1M Cost Savings Breakdown">
+                            </div>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>Owner&rsquo;s Lens</h4>
+                            <p>I didn&rsquo;t tune a vendor tool; I replaced it. Owning the engine turned a recurring cost into $1M saved every year and put ad revenue optimization under the business&rsquo;s own control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: High Furtados -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="company-badge">High Furtados</span>
+                        <h3 class="case-study-title">Turning Around a Stalled Product in 90 Days</h3>
+                        <p class="case-study-subtitle">B2C Music Education Platform Turnaround | 2017-2018</p>
+                    </div>
+                    
+                    <div class="case-study-content">
+                        <div class="case-section">
+                            <h4>The Challenge</h4>
+                            <p>18-month stalled product. Company needed immediate MVP release to validate market opportunity.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>What I Changed</h4>
+                            <p><strong>Process Transformation:</strong> Introduced Agile methodology (from Waterfall), trained 3 teams, built progress trackers.</p>
+                            <p><strong>Stakeholder Alignment:</strong> CEO + Business Head sign-offs, prioritized MVP ruthlessly, managed 5 vendors.</p>
+                            <p><strong>Platform Built:</strong> 6 modules (Student, Teacher, Course, Payment/Razorpay, CRM/Zoho, Reporting) across web + mobile.</p>
+                        </div>
+
+                        <div class="case-section results">
+                            <h4>Results</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">3 Months</div>
+                                    <div class="metric-label">From Stalled to Shipped</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">30%</div>
+                                    <div class="metric-label">Customer Base Expansion</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">90%</div>
+                                    <div class="metric-label">Customer Satisfaction</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">Promoted</div>
+                                    <div class="metric-label">To Lead PM Role</div>
+                                </div>
+                            </div>
+                            
+                            <div class="impact-chart">
+                                <img src="highfurtados_impact.png" alt="High Furtados Customer Growth and Satisfaction Metrics">
+                            </div>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>Owner&rsquo;s Lens</h4>
+                            <p>A product stalled for 18 months is a business problem before it is a technical one. Fixing the process and aligning the team shipped the MVP in three months and earned a promotion to Lead Product Manager.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3: Snaptasker -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="company-badge">Snaptasker</span>
+                        <h3 class="case-study-title">Building a B2B Service Marketplace as Founding Team Member</h3>
+                        <p class="case-study-subtitle">0→1 Product & Sales Leadership | 2015-2016</p>
+                    </div>
+                    
+                    <div class="case-study-content">
+                        <div class="case-section">
+                            <h4>The Opportunity</h4>
+                            <p>Founding team member: Led product development and sales for B2B freelancer marketplace connecting service providers to business clients.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>What I Built & Delivered</h4>
+                            <p><strong>MVP in 4 Months:</strong> Vendor module, client module, recommendation engine, payments, dual platform (web + mobile).</p>
+                            <p><strong>Product + Sales:</strong> Defined vision with founders, built product, led direct sales, validated market fit through transactions.</p>
+                        </div>
+
+                        <div class="case-section results">
+                            <h4>Results</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">4 Months</div>
+                                    <div class="metric-label">MVP to Market</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">100</div>
+                                    <div class="metric-label">Transactions in 6 Months</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">30%</div>
+                                    <div class="metric-label">Client Growth (First Year)</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">14%</div>
+                                    <div class="metric-label">Revenue Growth</div>
+                                </div>
+                            </div>
+                            
+                            <div class="impact-chart">
+                                <img src="snaptasker_impact.png" alt="Snaptasker Transaction Growth and Marketplace Validation">
+                            </div>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>Owner&rsquo;s Lens</h4>
+                            <p>At a startup, product and revenue are one job. I built the MVP and sold it: 100 transactions in six months proved the market was real.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="recommendations">
+            <h2 class="section-title">Recommendations</h2>
+            <div class="recommendations-grid">
+                
+                <div class="recommendation-card">
+                    <img src="Chirag.png" alt="LinkedIn Recommendation from Chirag Barhate, Enterprise Director at Viacom18" class="recommendation-screenshot">
+                </div>
+
+                <div class="recommendation-card">
+                    <img src="Rahul.png" alt="LinkedIn Recommendation from Rahul Dalal, Lead Designer at Wipro" class="recommendation-screenshot">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-title">Credentials &amp; Education</h2>
+            <div class="credentials-container">
+                <div class="credentials-intro">
+                    <p>Product strategy, AI and engineering, backed by formal training.</p>
+                </div>
+                <div class="credentials-grid">
+                    <div class="credential-item">
+                        <div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+                        <div class="credential-details">
+                            <h3>Diploma in Product Strategy</h3>
+                            <p class="credential-issuer">IIM Kozhikode</p>
+                            <p class="credential-year">Top 1% · 92% aggregate</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></div>
+                        <div class="credential-details">
+                            <h3>IBM AI Developer</h3>
+                            <p class="credential-issuer">IBM</p>
+                            <p class="credential-year">2024</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></div>
+                        <div class="credential-details">
+                            <h3>Certified Scrum Product Owner (CSPO)</h3>
+                            <p class="credential-issuer">Scrum Alliance</p>
+                            <p class="credential-year">2023</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+                        <div class="credential-details">
+                            <h3>Google Data Analytics</h3>
+                            <p class="credential-issuer">Google</p>
+                            <p class="credential-year">Completed</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+                        <div class="credential-details">
+                            <h3>Digital Marketing Analytics</h3>
+                            <p class="credential-issuer">University of Illinois</p>
+                            <p class="credential-year">Completed</p>
+                        </div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+                        <div class="credential-details">
+                            <h3>B.E., Computer Science</h3>
+                            <p class="credential-issuer">GGSIPU</p>
+                            <p class="credential-year">Degree</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -654,7 +1618,7 @@
         </footer>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // File upload handling
         function handleFileUpload(inputId, previewId) {
             const input = document.getElementById(inputId);
@@ -698,4 +1662,47 @@
                 this.style.borderColor = 'rgba(233, 69, 96, 0.3)';
                 this.style.background = 'rgba(233, 69, 96, 0.02)';
                 
-                const input = this.querySelector('input[
+                const input = this.querySelector('input[type="file"]');
+                if (input) {
+                    input.files = e.dataTransfer.files;
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        });
+
+        // Smooth scroll navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const navHeight = document.querySelector('.section-nav').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active section highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function updateActiveNav() {
+            const scrollPosition = window.scrollY + 150;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link
