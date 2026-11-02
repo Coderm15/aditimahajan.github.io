@@ -540,6 +540,44 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
+        /* BoloBit case study: demo links */
+        .case-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .case-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .case-cta a.primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .case-cta a:hover,
+        .case-cta a:focus-visible {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: #ffffff;
+        }
+
+        .impact-chart a {
+            display: inline-block;
+        }
+
         /* Recommendations Section */
         .recommendations-grid {
             display: grid;
@@ -1235,6 +1273,66 @@
         <section id="case-studies">
             <h2 class="section-title">Featured Work</h2>
             <div class="case-studies-grid">
+
+                <!-- Case Study 0: BoloBit (founder, current) -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <span class="company-badge">BoloBit · Founder</span>
+                        <h3 class="case-study-title">Building BoloBit: AI Surveys That Find the Customers Who Are Quietly Leaving</h3>
+                        <p class="case-study-subtitle">0→1 AI Feedback Intelligence Platform | 2026–Present</p>
+                    </div>
+
+                    <div class="case-study-content">
+                        <div class="case-section">
+                            <h4>The Challenge</h4>
+                            <p>Satisfaction is not loyalty. Most survey tools measure only how customers feel, so the accounts that are content but using the product less and wavering on renewal never show up until they churn. Designing a good survey, launching it and turning the answers into action also takes days of manual work.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>My Approach</h4>
+                            <p><strong>Describe it:</strong> A business describes what it needs to learn in one sentence; BoloBit drafts the survey with AI and tags every question with the signal it measures: Sentiment, Behaviour or Intent.</p>
+                            <p><strong>Launch it:</strong> Shared by link, QR code, short code or email; respondents answer on any device with no account.</p>
+                            <p><strong>Act on it:</strong> When the survey closes, each answer is verified against what its question was designed to measure, the three signals are crossed per customer, and the report names who is at risk, why, and the next step for each account.</p>
+                        </div>
+
+                        <div class="case-section results">
+                            <h4>Where It Stands</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-value">3 Signals</div>
+                                    <div class="metric-label">Sentiment · Behaviour · Intent per Customer</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">1 Sentence</div>
+                                    <div class="metric-label">From Idea to a Drafted Survey</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">406</div>
+                                    <div class="metric-label">Automated Checks Passing on Release R1</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">Live Demo</div>
+                                    <div class="metric-label">Interactive Product Walkthrough</div>
+                                </div>
+                            </div>
+
+                            <div class="impact-chart">
+                                <a href="bolobit-demo/" aria-label="Open the BoloBit interactive demo">
+                                    <img src="bolobit_featured.png" alt="BoloBit: Satisfaction is not loyalty. The easiest way to design and launch customer surveys, with verified insights and account-level actions ready at close." loading="lazy">
+                                </a>
+                            </div>
+
+                            <div class="case-cta">
+                                <a class="primary" href="bolobit-demo/">Try the interactive demo →</a>
+                            </div>
+                        </div>
+
+                        <div class="case-section">
+                            <h4>Key Takeaway</h4>
+                            <p>The insight a sentiment-only tool cannot see comes from asking the right question and crossing signals per customer. Making that effortless (describe, launch, act) is what turns a survey into a retention tool. Validation against real renewal outcomes is under way.</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Case Study 1: Viacom18 -->
                 <div class="case-study-card">
