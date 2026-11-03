@@ -10,11 +10,11 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Serif:ital@1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one sticky step bar over a single centred column; each step is one view (hash-routed).
    BoloBit brand system (dark by design, single theme): coral accent, warm near-black surfaces,
-   Syne for display, Instrument Sans for body, DM Mono for labels and figures. */
+   Enterprise type system (BB-DEC-001, 2026-11-03): Inter for all text, JetBrains Mono for labels and codes. */
 :root {
   color-scheme: dark;
   --bg: #0F0E0C;
@@ -41,21 +41,21 @@
   --b1: rgba(255, 255, 255, 0.07);
   --b2: rgba(255, 255, 255, 0.12);
   --b3: rgba(255, 255, 255, 0.18);
-  --f-display: "Syne", "Avenir Next", "Segoe UI", sans-serif;
-  --f-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-  --f-mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  /* Signature accent: serif italic for the single turning word of a brand line only (demo hero, login tagline, closing line). */
-  --f-accent: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-display: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Accent: the turning word of a brand line, shown in coral (no separate typeface). */
+  --f-accent: var(--f-display);
   --r-sm: 6px;
   --r-md: 10px;
   --r-lg: 14px;
-  --fs-micro: 11px;
+  --fs-micro: 12px;
   --fs-small: 13px;
   --fs-body: 15px;
-  --fs-lead: 17px;
-  --fs-h3: 19px;
-  --fs-h2: clamp(24px, 3.4vw, 32px);
-  --fs-h1: clamp(34px, 6vw, 58px);
+  --fs-lead: 16px;
+  --fs-h3: 18px;
+  --fs-h2: clamp(22px, 3vw, 28px);
+  --fs-h1: clamp(32px, 5vw, 48px);
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -69,7 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--s1); }
-h1, h2, h3 { font-family: var(--f-display); font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
 p { margin: 0; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--coral-text); outline-offset: 2px; border-radius: 4px; }
@@ -92,7 +92,7 @@ button { font: inherit; color: inherit; }
   background: var(--s1); border-bottom: 1px solid var(--b1);
 }
 .top-row { display: flex; align-items: center; gap: 14px; padding-block: 12px; flex-wrap: wrap; }
-.brand { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 700; font-size: 18px; text-decoration: none; color: var(--text); }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; text-decoration: none; color: var(--text); }
 .brand-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--coral-fill); color: #fff; display: grid; place-items: center; font-size: 16px; }
 .sample-pill { font-family: var(--f-mono); font-size: var(--fs-micro); color: var(--amber-text); border: 1px solid rgba(186,117,23,0.45); border-radius: 999px; padding: 3px 9px; letter-spacing: 0.06em; }
 .steps { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; max-width: 100%; }
@@ -129,16 +129,16 @@ main { padding-block: 40px 56px; }
 
 /* Step 1 — why */
 .hero { display: grid; gap: 18px; padding-block: 12px 4px; }
-.hero h1 { font-size: var(--fs-h1); font-weight: 700; line-height: 1.04; letter-spacing: -0.035em; max-width: none; }
+.hero h1 { font-size: var(--fs-h1); font-weight: 600; line-height: 1.12; letter-spacing: -0.025em; max-width: none; }
 .hero h1 .keep { white-space: nowrap; }
-.accent { font-family: var(--f-accent); font-style: italic; font-weight: 400; letter-spacing: -0.01em; font-size: 1.12em; line-height: 0.9; color: var(--coral-text); padding-right: 0.04em; }
+.accent { font-family: var(--f-accent); font-style: normal; font-weight: inherit; letter-spacing: inherit; font-size: 1em; line-height: inherit; color: var(--coral-text); }
 .hero .sub { font-size: var(--fs-lead); color: var(--text-2); max-width: 62ch; }
 .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 @media (max-width: 720px) { .pillars { grid-template-columns: 1fr; } }
 .pillar { border-radius: var(--r-lg); padding: 18px; background: var(--s1); border: 1px solid var(--b1); display: grid; gap: 6px; }
 .pillar .q { color: var(--text-2); font-size: var(--fs-small); }
 .chip {
-  display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 10.5px;
+  display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 12px;
   letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; border: 1px solid;
   width: fit-content; white-space: nowrap;
 }
@@ -211,7 +211,7 @@ legend { padding: 0; display: grid; gap: 6px; margin-bottom: 4px; font-weight: 5
 .tool { border-radius: var(--r-md); padding: 14px; display: grid; gap: 6px; align-content: start; }
 .tool.classic { background: var(--s2); }
 .tool.bolobit { border: 1px solid; }
-.tool .big { font-family: var(--f-display); font-size: 22px; font-weight: 700; line-height: 1.15; }
+.tool .big { font-family: var(--f-display); font-size: 22px; font-weight: 600; line-height: 1.15; }
 .tool .note { font-size: var(--fs-small); color: var(--text-2); }
 .gap-callout { border-radius: var(--r-md); padding: 12px 14px; font-size: var(--fs-small); background: var(--coral-wash); border: 1px solid rgba(232,68,26,0.35); }
 .gap-callout[hidden] { display: none !important; }
@@ -225,7 +225,7 @@ legend { padding: 0; display: grid; gap: 6px; margin-bottom: 4px; font-weight: 5
 @media (max-width: 900px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .tile { background: var(--s1); border: 1px solid var(--b1); border-radius: var(--r-md); padding: 14px; display: grid; gap: 2px; }
-.tile .val { font-family: var(--f-display); font-size: 28px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .val { font-family: var(--f-display); font-size: 28px; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .tile .hint { font-size: 12px; color: var(--muted); }
 .objective { border-left: 3px solid var(--chrome); background: var(--s1); border-radius: 0 var(--r-md) var(--r-md) 0; padding: 14px 18px; display: grid; gap: 4px; }
 .objective p { font-style: italic; color: var(--text-2); }
@@ -240,23 +240,23 @@ legend { padding: 0; display: grid; gap: 6px; margin-bottom: 4px; font-weight: 5
 }
 .cohort:hover { background: var(--s2); }
 .cohort[aria-expanded="true"] { background: var(--s2); border-color: var(--b2); }
-.cohort .count { font-family: var(--f-display); font-size: 24px; font-weight: 700; grid-row: span 2; font-variant-numeric: tabular-nums; }
+.cohort .count { font-family: var(--f-display); font-size: 24px; font-weight: 600; grid-row: span 2; font-variant-numeric: tabular-nums; }
 .cohort .name { font-weight: 500; }
 .cohort .pct { font-family: var(--f-mono); font-size: 12px; color: var(--muted); text-align: right; grid-row: span 2; }
 .cohort .bar { height: 6px; border-radius: 99px; background: var(--s3); overflow: hidden; grid-column: 2; }
 .cohort .bar span { display: block; height: 100%; border-radius: 99px; }
 .accounts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; padding-top: 8px; }
-.acct { font-family: var(--f-mono); font-size: 11.5px; padding: 3px 8px; border-radius: var(--r-sm); background: var(--s3); color: var(--text-2); }
+.acct { font-family: var(--f-mono); font-size: 12px; padding: 3px 8px; border-radius: var(--r-sm); background: var(--s3); color: var(--text-2); }
 .cohort-hint { font-size: 12px; color: var(--muted); }
 .actions { display: grid; }
 .action { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; padding: 13px 0; border-bottom: 1px solid var(--b1); align-items: start; }
 .action:last-child { border-bottom: 0; }
-.when { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.06em; padding: 3px 7px; border-radius: var(--r-sm); white-space: nowrap; margin-top: 2px; }
+.when { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.06em; padding: 3px 7px; border-radius: var(--r-sm); white-space: nowrap; margin-top: 2px; }
 .when.now { background: var(--red); color: #fff; }
 .when.week { background: var(--red-wash); color: #F08886; }
 .when.month { background: rgba(186,117,23,0.14); color: var(--amber-text); }
 .when.opp { background: var(--green-wash); color: var(--green-text); }
-.action .who { grid-column: 2; font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.action .who { grid-column: 2; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
 .quality { display: grid; gap: 12px; }
 .q-row { display: grid; grid-template-columns: 96px minmax(0, 1fr) 70px; gap: 12px; align-items: center; font-size: var(--fs-small); }
 .q-row .bar { height: 8px; background: var(--s3); border-radius: 99px; position: relative; overflow: hidden; }
@@ -284,7 +284,7 @@ legend { padding: 0; display: grid; gap: 6px; margin-bottom: 4px; font-weight: 5
 .promise > div { padding: 18px 20px; display: grid; gap: 6px; align-content: start; border-left: 1px solid var(--b1); }
 .promise > div:first-child { border-left: 0; }
 @media (max-width: 760px) { .promise > div { border-left: 0; border-top: 1px solid var(--b1); } .promise > div:first-child { border-top: 0; } }
-.promise .verb { font-family: var(--f-display); font-size: 22px; font-weight: 700; }
+.promise .verb { font-family: var(--f-display); font-size: 22px; font-weight: 600; }
 .promise .verb span { color: var(--coral-text); }
 .promise p { color: var(--text-2); font-size: var(--fs-small); }
 .stage-tag { display: inline-flex; gap: 8px; align-items: center; font-family: var(--f-mono); font-size: var(--fs-micro); letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral-text); }
@@ -298,7 +298,7 @@ legend { padding: 0; display: grid; gap: 6px; margin-bottom: 4px; font-weight: 5
 .channels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
 @media (max-width: 620px) { .channels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .channel { background: var(--s2); border-radius: var(--r-md); padding: 12px; display: grid; gap: 4px; font-size: var(--fs-small); }
-.channel .v { font-family: var(--f-mono); color: var(--text); font-size: 12.5px; word-break: break-all; }
+.channel .v { font-family: var(--f-mono); color: var(--text); font-size: 13px; word-break: break-all; }
 .channel .k { color: var(--muted); font-size: 12px; }
 .ready { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: var(--fs-small); color: var(--green-text); background: var(--green-wash); border: 1px solid rgba(29,158,117,0.4); border-radius: var(--r-md); padding: 10px 14px; }
 .ready svg { width: 16px; height: 16px; flex: none; }
@@ -339,7 +339,7 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
   <div class="hero">
     <span class="label coral">Feedback intelligence, verified</span>
     <h1 id="h-why">Satisfaction <span class="keep">is not</span> <em class="accent">loyalty.</em></h1>
-    <p class="sub" style="font-size:var(--fs-h3);color:var(--text)">The easiest way to design and launch a customer survey, and the fastest way to know what to do once the answers are in.</p>
+    <p class="sub" style="font-size:var(--fs-h3);color:var(--text)">The easiest way to design and launch a customer survey, with the analysis and next steps ready the moment it closes.</p>
     <p class="sub">Most surveys measure how customers feel. The customers you lose are often the ones who feel fine, use you less each month, and quietly decide not to renew. BoloBit measures three signals per customer and crosses them, so those accounts show up by name before the renewal date.</p>
   </div>
 
@@ -698,7 +698,7 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
   document.getElementById('coverage').innerHTML = ['s', 'b', 'i'].map(function (k) {
     var pct = Math.round(cov[k] / total * 100);
     return '<div class="cov-row"><span class="chip ' + k + '">' + CHIP[k][1] + '</span><div class="bar"><span style="width:' + pct + '%;background:' + COLORS[k] + '"></span></div><span class="v num">' + pct + '% · ' + TARGET[k] + '%</span></div>';
-  }).join('') + '<div class="cov-row"><span></span><span class="label" style="font-size:10px">this survey · suggested</span><span></span></div>';
+  }).join('') + '<div class="cov-row"><span></span><span class="label" style="font-size:12px">this survey · suggested</span><span></span></div>';
 
   /* ── Step 3: one respondent (exact cohort rule, first match wins) ── */
   var PRESETS = {
