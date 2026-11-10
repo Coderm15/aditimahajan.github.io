@@ -108,6 +108,61 @@
             letter-spacing: 0.3px;
         }
 
+        /* Hero proof points: three numbers a recruiter can read in five seconds */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            max-width: 640px;
+            margin: 28px auto 0;
+        }
+
+        .hero-stat {
+            padding: 16px 12px;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-stat .metric-value {
+            font-size: 2rem;
+        }
+
+        .hero-stat .metric-label {
+            font-size: 0.78rem;
+        }
+
+        .hero-stat .metric-note {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.68rem;
+            color: var(--accent-light);
+        }
+
+        @media (max-width: 600px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* Decision sections inside case studies */
+        .case-section.decisions ul {
+            margin: 8px 0 0 18px;
+            padding: 0;
+        }
+
+        .case-section.decisions li {
+            margin-bottom: 8px;
+        }
+
+        .evidence-note {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
         /* Sticky Navigation - Sleek Professional Design */
         .section-nav {
             position: sticky;
@@ -1163,8 +1218,23 @@
     <div class="container">
         <header>
             <h1>Aditi Mahajan</h1>
-            <p class="tagline">Senior Product Manager • AI Products • B2B SaaS • 0→1 Product Builder</p>
-            <p class="work-auth">U.S. Permanent Resident (Green Card) · No sponsorship required</p>
+            <p class="tagline">Senior / Lead Product Manager</p>
+            <p class="tagline" style="margin-top:6px;font-size:1rem">AI Products · Enterprise Platforms · AdTech · 0→1</p>
+            <p class="work-auth">Los Angeles / Irvine, CA · U.S. Permanent Resident · No sponsorship required</p>
+            <div class="hero-stats" aria-label="Proof points">
+                <div class="hero-stat">
+                    <div class="metric-value">$1M</div>
+                    <div class="metric-label">Annual savings<span class="metric-note">Viacom18 ads engine, replaced a licensed tool</span></div>
+                </div>
+                <div class="hero-stat">
+                    <div class="metric-value">10K+</div>
+                    <div class="metric-label">Hours automated monthly<span class="metric-note">Traffic order system, six enterprise apps</span></div>
+                </div>
+                <div class="hero-stat">
+                    <div class="metric-value">0→1</div>
+                    <div class="metric-label">AI product delivery<span class="metric-note">BoloBit, strategy to production ML</span></div>
+                </div>
+            </div>
             <div class="header-actions">
                 <a href="mailto:aditimahajan15@outlook.com" class="action-icon" title="Get In Touch">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1213,13 +1283,11 @@
         <section id="summary">
             <h2 class="section-title">Executive Summary</h2>
             <div class="summary-content">
-                <p>Product leader and founder with <span class="highlight">10+ years across product management, engineering and 0→1 development</span>. I operate like an owner: at every step, I go after the problem with the biggest business lever, build the product that moves it, and measure the result in dollars, hours and customers.</p>
+                <p>I&rsquo;m a product leader with <span class="highlight">10+ years spanning product management, software engineering and 0→1 development</span>. I&rsquo;ve built AI-powered products from concept to production, replaced costly enterprise systems, and led initiatives delivering approximately <span class="highlight">$1M in annual savings</span> and automating 10,000+ hours of work monthly.</p>
 
-                <p>Founder of <span class="highlight">BoloBit</span>, an AI-powered B2B survey and insights platform I built and shipped end to end, from strategy and UX through engineering and cloud delivery. It automates survey creation and turns post-survey analysis into recommended next actions, cutting insight-to-decision time from days to under two hours.</p>
+                <p>My strength is connecting customer and business problems with practical product decisions and technical execution. At <span class="highlight">BoloBit</span>, I own the journey from product strategy and experience design through AI integration and production delivery. Previously, at Viacom18, I led advertising and enterprise workflow products with measurable operational and commercial impact.</p>
 
-                <p>At Viacom18, I built a 0→1 ads optimization engine that replaced a third-party tool, delivering <span class="highlight">$1M in annual savings</span>, 4% year-over-year revenue growth and 10,000+ man-hours automated each month. At High Furtados, I revived a product stalled for 18 months and shipped its MVP in three months.</p>
-
-                <p>Seeking Senior Product Manager roles in <span class="highlight">AI products, B2B SaaS and ads and platform teams</span>.</p>
+                <p>Seeking Senior and Lead Product Manager roles in <span class="highlight">AI products, enterprise platforms and AdTech</span>.</p>
             </div>
         </section>
 
@@ -1239,8 +1307,8 @@
                     </div>
                     <ul class="skill-list">
                         <li><strong>LLM Integration:</strong> Claude API for AI survey design and response analysis</li>
-                        <li><strong>Insight Design:</strong> Sentiment, behavior and intent analysis; automated &ldquo;What&rdquo; and &ldquo;Next&rdquo; recommendations</li>
-                        <li><strong>AI-Assisted Delivery:</strong> Claude Code to accelerate implementation and debugging, with human review and validation</li>
+                        <li><strong>Production ML:</strong> Owned a trend-prediction service (Python/FastAPI, scikit-learn Random Forest, AWS EC2, PostgreSQL) with automated retraining and a heuristic fallback</li>
+                        <li><strong>Insight Design:</strong> Rule-based Sentiment, Behaviour and Intent engine for renewal risk; automated &ldquo;What&rdquo; and &ldquo;Next&rdquo; recommendations</li>
                     </ul>
                 </div>
 
@@ -1268,13 +1336,13 @@
                             <h3>Ads Monetization & Enterprise B2B</h3>
                             <p class="skill-context">
                                 <span class="company-badge">Viacom18</span>
-                                Broadcast ads revenue and six enterprise B2B applications
+                                Advertising optimization and six enterprise B2B applications
                             </p>
                         </div>
                     </div>
                     <ul class="skill-list">
-                        <li><strong>Revenue Optimization:</strong> In-house ads engine replacing a third-party tool across broadcast channels</li>
-                        <li><strong>Vendor & Stakeholder Leadership:</strong> Five external vendors, including two development partners; three-year audit cycles with Deloitte, EY and Reliance</li>
+                        <li><strong>Revenue Optimization:</strong> In-house advertising optimization engine replacing a third-party solution</li>
+                        <li><strong>Vendor & Stakeholder Leadership:</strong> Coordinated five vendors, including two development partners; $110K+ vendor savings</li>
                         <li><strong>Integration & Delivery:</strong> 20+ API integrations; CI/CD with Jenkins</li>
                     </ul>
                 </div>
@@ -1356,6 +1424,17 @@
                             </div>
                         </div>
 
+                        <div class="case-section decisions">
+                            <h4>Product Decisions</h4>
+                            <ul>
+                                <li><strong>Why three signals, not a satisfaction score.</strong> A sentiment score answers &ldquo;how do they feel&rdquo; and nothing else. The accounts that churn quietly feel fine, use less, and have not decided to renew. Sentiment, Behaviour and Intent are the three questions a renewal conversation actually turns on, and crossing them per account is what separates &ldquo;content&rdquo; from &ldquo;loyal&rdquo;.</li>
+                                <li><strong>Rules before models for renewal risk.</strong> The at-risk engine is rule-based and fully tested rather than ML-scored. With no labelled churn outcomes yet, a model would have learned from my own assumptions; rules make every flag explainable to the account owner and testable before a customer sees it. The production ML service is reserved for trend prediction, where the platform generates its own labels.</li>
+                                <li><strong>Deliberately out of the MVP.</strong> ML-predicted churn scores (predictions stay directional until validated), free-form reporting, and anything that needs a customer&rsquo;s CRM data before the first survey can run. One sentence to a drafted survey, one link to launch, one report at close.</li>
+                                <li><strong>What would change the direction.</strong> The silent-churn thesis is a hypothesis until at-risk flags are compared with actual renewal outcomes. If the flagged cohort does not renew at a materially lower rate than the rest, the signal weighting changes first and the Intent signal is replaced with usage telemetry second.</li>
+                            </ul>
+                            <p class="evidence-note">Evidence status: the &ldquo;days to under two hours&rdquo; figure is measured on BoloBit&rsquo;s own workflow (survey close to delivered report), not an independent customer measurement. Demo figures are sample data.</p>
+                        </div>
+
                         <div class="case-section">
                             <h4>Owner&rsquo;s Lens</h4>
                             <p>The customers who leave quietly are the market sentiment-only tools miss. I built BoloBit end to end to own that gap, and I am validating it against real renewal outcomes before scaling it.</p>
@@ -1374,14 +1453,23 @@
                     <div class="case-study-content">
                         <div class="case-section">
                             <h4>The Challenge</h4>
-                            <p>Viacom18 relied on expensive third-party tools for revenue optimization across limited channels. Built internal platform to scale across all broadcast channels while handling 100+ unique business constraints.</p>
+                            <p>Viacom18 relied on an expensive third-party solution for advertising revenue optimization that covered a limited set of channels. The business needed optimization across all its channels while handling 100+ unique business constraints.</p>
+                        </div>
+
+                        <div class="case-section decisions">
+                            <h4>Build vs. Buy</h4>
+                            <ul>
+                                <li><strong>Alternatives considered.</strong> Renew the vendor licence and extend it channel by channel; pay the vendor to customize for our constraint set; or build an internal engine that encoded the constraints ourselves.</li>
+                                <li><strong>Why build.</strong> The recurring licence was a perpetual cost with no path to full channel coverage, and the 100+ constraints were our business logic, not the vendor&rsquo;s. Owning the engine turned an annual expense into a one-time build and put the optimization rules under the business&rsquo;s own control.</li>
+                                <li><strong>The tradeoff.</strong> Nine months to full V1.0 and the delivery risk of two development partners, against a tool that worked today for some channels. We de-risked it by shipping an MVP in four months and mapping every constraint scenario up front with a permutation-combination approach, so coverage was provable before launch.</li>
+                            </ul>
                         </div>
 
                         <div class="case-section">
                             <h4>My Approach</h4>
                             <p><strong>Mathematical Framework:</strong> Applied permutation-combination methodology to systematically map all constraint scenarios and ensure complete coverage.</p>
                             <p><strong>Stakeholder Alignment:</strong> Collaborated with VP-level leadership and business stakeholders to translate technical scenarios into actionable business requirements.</p>
-                            <p><strong>Execution:</strong> Managed 2 major vendors, coordinated cross-functional teams, delivered MVP in 4 months and full V1.0 in 9 months.</p>
+                            <p><strong>Execution:</strong> Coordinated 2 development partners and cross-functional teams, delivered MVP in 4 months and full V1.0 in 9 months.</p>
                         </div>
 
                         <div class="case-section results">
@@ -1393,7 +1481,7 @@
                                 </div>
                                 <div class="metric-card">
                                     <div class="metric-value">4%</div>
-                                    <div class="metric-label">YoY Revenue Growth</div>
+                                    <div class="metric-label">YoY Revenue Growth (Contributed)</div>
                                 </div>
                                 <div class="metric-card">
                                     <div class="metric-value">10K+</div>
@@ -1404,10 +1492,11 @@
                                     <div class="metric-label">Expanded Coverage</div>
                                 </div>
                             </div>
-                            
+
                             <div class="impact-chart">
                                 <img src="viacom18_impact.png" alt="Viacom18 $1M Cost Savings Breakdown">
                             </div>
+                            <p class="evidence-note">Evidence status: the $1M is the licence and operating cost the engine replaced, measured directly. The 4% is company-wide year-over-year ad revenue growth that the engine contributed to alongside other factors, not growth attributed to it alone.</p>
                         </div>
 
                         <div class="case-section">
@@ -1475,14 +1564,14 @@
                 <div class="case-study-card">
                     <div class="case-study-header">
                         <span class="company-badge">Snaptasker</span>
-                        <h3 class="case-study-title">Building a B2B Service Marketplace as Founding Team Member</h3>
+                        <h3 class="case-study-title">Building a B2B Service Marketplace on the Core Team</h3>
                         <p class="case-study-subtitle">0→1 Product & Sales Leadership | 2015-2016</p>
                     </div>
                     
                     <div class="case-study-content">
                         <div class="case-section">
                             <h4>The Opportunity</h4>
-                            <p>Founding team member: Led product development and sales for B2B freelancer marketplace connecting service providers to business clients.</p>
+                            <p>Core team member: helped build a B2B freelancer marketplace connecting service providers to business clients, leading product development and direct sales.</p>
                         </div>
 
                         <div class="case-section">
