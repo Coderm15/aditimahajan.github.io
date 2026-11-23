@@ -316,6 +316,46 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
   .view { animation: rise 0.35s ease-out; }
   @keyframes rise { from { opacity: 0.4; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 }
+
+/* Report, matched to the live product (2026-11-23) */
+.stars { color: var(--amber-text); letter-spacing: 0.04em; }
+.iq-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.iq-tiles > div { display: grid; gap: 2px; padding: 12px 14px; background: var(--s1); border: 1px solid var(--b1); border-radius: var(--r-md); }
+.iq-tiles b { font-family: var(--f-display); font-size: 26px; font-weight: 600; line-height: 1.1; color: var(--text); }
+.iq-tiles .hint { font-size: 12px; color: var(--muted); }
+@media (max-width: 520px) { .iq-tiles { grid-template-columns: 1fr; } }
+.intuition { display: grid; gap: 10px; }
+.int-groups { list-style: none; margin: 0; padding: 0; display: grid; }
+.int-groups li { display: grid; grid-template-columns: minmax(110px, 1.2fr) minmax(80px, 0.8fr) minmax(0, 2fr); gap: 10px; align-items: baseline; padding: 10px 14px; border-left: 3px solid var(--chrome); font-size: var(--fs-small); color: var(--text-2); }
+.int-groups li + li { border-top: 1px solid var(--b1); }
+.int-groups li b { color: var(--text); font-weight: 600; font-size: var(--fs-body); }
+.int-groups li span:nth-child(2) { color: var(--text); }
+.int-groups .t-red { border-left-color: var(--red); } .int-groups .t-amber { border-left-color: var(--amber); }
+.int-groups .t-green { border-left-color: var(--green); } .int-groups .t-neutral { border-left-color: var(--chrome); }
+@media (max-width: 520px) { .int-groups li { grid-template-columns: 1fr auto; } .int-groups li span:last-child { grid-column: 1 / -1; } }
+.details-toggle { justify-self: start; margin-top: 4px; padding: 0; border: 0; background: none; color: var(--coral-text); font: inherit; font-size: var(--fs-body); cursor: pointer; }
+.details-toggle:hover { text-decoration: underline; }
+.details-toggle:focus-visible { outline: 2px solid var(--coral-text); outline-offset: 3px; border-radius: 4px; }
+.int-sub { display: block; margin: 8px 0 2px; font-weight: 600; color: var(--text); }
+.people { list-style: none; margin: 0; padding: 0; display: grid; }
+.person { padding: 12px 0; }
+.person + .person { border-top: 1px solid var(--b1); }
+.person-head { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.person-head b { color: var(--text); font-weight: 600; }
+.person p { margin-top: 6px; color: var(--text-2); font-size: var(--fs-small); line-height: 1.55; }
+.person.more { color: var(--muted); font-size: var(--fs-small); }
+.rchip { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: var(--r-sm); border: 1px solid rgba(226, 75, 74, 0.40); background: var(--red-wash); color: #F28B8A; }
+.iq-close { display: grid; gap: 14px; padding: 22px 24px; border: 1px solid var(--coral); border-radius: var(--r-lg); background: var(--s1); }
+.proof { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+.proof li { color: var(--text-2); font-size: var(--fs-small); line-height: 1.45; }
+.proof b { display: block; font-family: var(--f-display); font-size: 24px; font-weight: 600; color: var(--text); }
+@media (max-width: 620px) { .proof { grid-template-columns: 1fr; } }
+.first-step { display: flex; gap: 10px; align-items: center; color: var(--text); font-size: var(--fs-small); }
+.checked summary { cursor: pointer; color: var(--coral-text); font-size: var(--fs-small); }
+.checked .quality { margin-top: 12px; }
+.quality-line { display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--b1); }
+.quality-line p { color: var(--text); }
+.ask .label + .ask-input, .ask .ask-input + .label { margin-top: 4px; }
 </style>
 
 <header class="top">
@@ -339,13 +379,13 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
   <div class="hero">
     <span class="label coral">Feedback intelligence, verified</span>
     <h1 id="h-why">Know which customers are at risk, and why, <em class="accent">before renewal.</em></h1>
-    <p class="sub" style="font-size:var(--fs-h3);color:var(--text)"><strong style="font-weight:600">Satisfaction is not loyalty.</strong> BoloBit is the easiest way to design and launch a customer survey, with the analysis and next steps ready the moment it closes.</p>
+    <p class="sub" style="font-size:var(--fs-h3);color:var(--text)"><strong style="font-weight:600">Satisfaction is not loyalty.</strong> Churn prediction usually needs years of churn history or a full customer-success data stack. BoloBit tells you who is at risk, and why, from your first survey.</p>
     <p class="sub">Most surveys measure how customers feel. The customers you lose are often the ones who feel fine, use the product less each month, and quietly decide not to renew. BoloBit measures three signals per customer and crosses them, so those accounts show up by name before the renewal date.</p>
   </div>
 
   <div class="promise" aria-label="What BoloBit does for you">
-    <div><span class="stage-tag">Design</span><span class="verb">Describe it<span>.</span></span><p>Write one sentence about what you need to learn. BoloBit drafts the whole survey in minutes, every question tagged with what it measures.</p></div>
-    <div><span class="stage-tag">Launch</span><span class="verb">Launch it<span>.</span></span><p>Share it by link, QR code, short code or email. Customers answer on any device, no account needed.</p></div>
+    <div><span class="stage-tag">Design</span><span class="verb">Describe it<span>.</span></span><p>Write one sentence about what you need to learn. BoloBit drafts the whole survey in under a minute, for you to review, every question tagged with what it measures.</p></div>
+    <div><span class="stage-tag">Launch</span><span class="verb">Launch it<span>.</span></span><p>Share it by link, QR code or short code. Customers answer on any device, no account needed.</p></div>
     <div><span class="stage-tag">Act</span><span class="verb">Act on it<span>.</span></span><p>When it closes, the analysis is done: who is at risk, why, and the next step for each account, by name.</p></div>
   </div>
 
@@ -388,12 +428,17 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
     <p>You don't write questions from scratch. Say what you want to learn and BoloBit drafts the survey, tags each question with the signal it measures, and has it ready to launch. Select a question to see why it was tagged that way.</p>
   </div>
   <div class="card ask">
-    <label class="label" for="ask-input">What do you want to learn?</label>
+    <span class="label coral">Let BoloBit do the heavy lifting · Generate from prompt</span>
+    <label class="label" for="ask-input">1. What is this survey for?</label>
+    <input class="ask-input" id="ask-input" type="text" value="Find out which customers might not renew next quarter, and why" readonly>
+    <label class="label" for="ask-decision">2. What decision will the results help you make?</label>
+    <input class="ask-input" id="ask-decision" type="text" value="Which accounts our success team calls before renewal" readonly>
+    <label class="label" for="ask-group">3. Which group of people will answer it, and roughly how many?</label>
     <div class="ask-row">
-      <input class="ask-input" id="ask-input" type="text" value="Which customers are at risk of not renewing, and why?" readonly>
-      <button class="btn primary" type="button" id="draft-btn">Draft survey</button>
+      <input class="ask-input" id="ask-group" type="text" value="Account admins at our B2B customers · about 40" readonly>
+      <button class="btn primary" type="button" id="draft-btn">Generate survey</button>
     </div>
-    <span class="ask-note" id="draft-note">Sample prompt. The five questions below are what BoloBit drafted from it.</span>
+    <span class="ask-note" id="draft-note">Sample prompt. The five questions below are what BoloBit drafted from it, in under a minute, for you to review.</span>
   </div>
   <div class="builder">
     <div id="qlist" role="group" aria-label="Survey questions"></div>
@@ -418,7 +463,7 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
       <div class="channel"><span class="k">Link</span><span class="v">…/s/K7Q2RX</span></div>
       <div class="channel"><span class="k">Short code</span><span class="v">K7Q2RX</span></div>
       <div class="channel"><span class="k">QR code</span><span class="v">For slides, receipts, events</span></div>
-      <div class="channel"><span class="k">Email</span><span class="v">To a customer list</span></div>
+      <div class="channel"><span class="k">Email invites</span><span class="v">Coming soon</span></div>
     </div>
     <p class="ready"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Respondents answer on any device with no account. Results build up as answers arrive.</p>
   </div>
@@ -506,9 +551,8 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
     <div style="display:grid;gap:6px">
       <span class="stage-tag">Act · ready the moment the survey closes</span>
       <h2 id="h-report">Churn Risk Review</h2>
-      <span class="sub-meta">40 respondents · 34 completed · closed 19 Jul 2026</span>
+      <span class="sub-meta">40 respondents · 34 completed · closed 19 Jul 2026 · SBI · BoloBit IQ</span>
     </div>
-    <span class="badge-ok">✓ IQ-ELIGIBLE</span>
   </div>
 
   <p class="ready"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>No exports, spreadsheets or pivot tables. This report, its customer groups and the next step for each named account are produced automatically when the survey closes.</p>
@@ -517,7 +561,7 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
     <div class="tile"><span class="label">Respondents</span><span class="val">40</span><span class="hint">34 completed</span></div>
     <div class="tile"><span class="label">Completion</span><span class="val" style="color:var(--green-text)">85%</span><span class="hint">of respondents</span></div>
     <div class="tile"><span class="label">At risk</span><span class="val" style="color:#F08886">14</span><span class="hint">41% of completed</span></div>
-    <div class="tile"><span class="label">NPS</span><span class="val" style="color:var(--amber-text)">+9</span><span class="hint">below +30 target</span></div>
+    <div class="tile"><span class="label">NPS</span><span class="val" style="color:var(--amber-text)">+9</span><span class="hint">recommend question</span></div>
     <div class="tile"><span class="label">Expansion</span><span class="val" style="color:var(--green-text)">5</span><span class="hint">upsell candidates</span></div>
   </div>
 
@@ -527,8 +571,13 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
   </div>
 
   <div class="answer">
-    <span class="label coral">The answer</span>
-    <p><em>14 of 34 respondents (41%) are at risk of not renewing.</em> Of these, <em>9 are not unhappy</em>: they are disengaging. A sentiment-only tool would count them as satisfied and miss them.</p>
+    <span class="label coral">BoloBit IQ analysis</span>
+    <p><em>14 of 34 accounts (41%) are at risk of not renewing.</em> 11 of them show it strongly (<span class="stars">★★</span> or more). <em>9 of them are not unhappy</em>: quietly disengaging. A sentiment-only tool would count them as satisfied and miss them.</p>
+    <div class="iq-tiles">
+      <div><span class="label">At risk</span><b class="num">14</b><span class="hint">of 34</span></div>
+      <div><span class="label">Strong signal</span><b class="num">11</b><span class="hint">at risk, ★★ or more</span></div>
+      <div><span class="label">Silent risk</span><b class="num">9</b><span class="hint">not unhappy, but leaving signs</span></div>
+    </div>
   </div>
 
   <div class="grid-2">
@@ -553,17 +602,50 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
     </div>
   </div>
 
-  <div class="card quality">
-    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:baseline"><span class="label">Signal quality</span><h3>Evidence strength</h3></div>
-    <div class="q-row"><span style="color:var(--blue-text)">Sentiment</span><div class="bar"><span class="gen" style="width:100%;background:var(--blue)"></span><span class="ver" style="width:65.5%;background:var(--blue)"></span></div><span class="v num">57 / 87</span></div>
-    <div class="q-row"><span style="color:var(--amber-text)">Behaviour</span><div class="bar"><span class="ver" style="width:100%;background:var(--amber)"></span></div><span class="v num">32 / 32</span></div>
-    <div class="q-row"><span style="color:var(--green-text)">Intent</span><div class="bar"><span class="ver" style="width:100%;background:var(--green)"></span></div><span class="v num">79 / 79</span></div>
-    <p class="footnote">Solid bar: verified, meaning the answer delivered the signal its question was designed to measure. Faded bar: answers that carried that signal anyway on questions that asked something else. Only verified signal feeds the cohorts and BoloBit IQ.</p>
+  <div class="card intuition">
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">
+      <h3>BoloBit intuitive analysis</h3><span class="label"><span class="stars">★★</span> two answers agree · <span class="stars">★★★</span> three or more</span>
+    </div>
+    <p class="cohort-hint">How firmly each customer is placed. Stars never change the headcounts above.</p>
+    <ul class="int-groups">
+      <li class="t-red"><b>Critical</b><span>2 people</span><span>2 at <span class="stars">★★</span></span></li>
+      <li class="t-red"><b>Silent risk</b><span>9 people</span><span>6 at <span class="stars">★★</span> · 3 single signal</span></li>
+      <li class="t-red"><b>Vocal risk</b><span>3 people</span><span>1 at <span class="stars">★★★</span> · 2 at <span class="stars">★★</span></span></li>
+      <li class="t-amber"><b>Watch</b><span>8 people</span><span>3 at <span class="stars">★★</span> · 5 single signal</span></li>
+      <li class="t-green"><b>Expansion</b><span>5 people</span><span>4 at <span class="stars">★★</span> · 1 single signal</span></li>
+      <li class="t-neutral"><b>Stable</b><span>7 people</span><span>2 at <span class="stars">★★</span> · 5 single signal</span></li>
+    </ul>
+    <button type="button" class="details-toggle" id="details-toggle" aria-expanded="false" aria-controls="people">Click here for details</button>
+    <div id="people" hidden>
+      <span class="int-sub">By customer</span>
+      <ol class="people"></ol>
+    </div>
+  </div>
+
+  <div class="iq-close">
+    <span class="label coral">What BoloBit IQ did for this survey</span>
+    <ul class="proof">
+      <li><b class="num">168</b> answers checked against what each question was built to measure</li>
+      <li><b class="num">34</b> customers read across how they feel, what they do and what they plan</li>
+      <li><b class="num">9</b> silent-risk customers a sentiment-only tool would count as satisfied</li>
+      <li><b class="num">27</b> named with a next step</li>
+    </ul>
+    <p class="first-step"><span class="when now">NOW</span> Executive outreach within 48h: 2 accounts in Critical.</p>
+    <details class="checked">
+      <summary>How the answers were checked</summary>
+      <div class="quality">
+        <div class="q-row"><span style="color:var(--blue-text)">Sentiment</span><div class="bar"><span class="gen" style="width:100%;background:var(--blue)"></span><span class="ver" style="width:65.5%;background:var(--blue)"></span></div><span class="v num">57 / 87</span></div>
+        <div class="q-row"><span style="color:var(--amber-text)">Behaviour</span><div class="bar"><span class="ver" style="width:100%;background:var(--amber)"></span></div><span class="v num">32 / 32</span></div>
+        <div class="q-row"><span style="color:var(--green-text)">Intent</span><div class="bar"><span class="ver" style="width:100%;background:var(--green)"></span></div><span class="v num">79 / 79</span></div>
+        <p class="footnote">Solid bar: verified, meaning the answer delivered the signal its question was designed to measure. Faded bar: answers that carried that signal anyway on questions that asked something else. Only verified signal feeds the cohorts.</p>
+      </div>
+    </details>
+    <div class="quality-line"><span class="label">Quality check</span><p>This survey passed its quality check.</p></div>
   </div>
 
   <div class="pager">
     <a class="btn" href="#respond"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg>Back</a>
-    <a class="btn primary" href="#iq">What happens next time <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <a class="btn primary" href="#iq">What BoloBit IQ does next <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
 </section>
 
@@ -571,25 +653,22 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
 <section class="view" id="v-iq" data-view="iq" aria-labelledby="h-iq" hidden>
   <div class="view-head">
     <span class="stage-tag">Act · and improve</span>
-    <h2 id="h-iq">Each survey makes the next one sharper</h2>
-    <p>When a survey closes, BoloBit checks whether its results are solid enough to learn from. If they are, "Create similar survey" designs the next one using what this one proved, and what it got wrong.</p>
+    <h2 id="h-iq">Checked today, sharper over time</h2>
+    <p>When a survey closes, BoloBit IQ checks its quality and tells you in one line. Next on the roadmap: tracking who actually stayed or left, so every prediction is measured against what happened.</p>
   </div>
   <div class="grid-2">
     <div class="card" style="display:grid;gap:12px;align-content:start">
-      <span class="label">Is this survey worth learning from?</span>
-      <div class="gate" id="gate"></div>
-      <p class="footnote">Every check is written down and versioned, so "eligible" always means the same thing. Weak or one-note surveys are kept out of the learning loop.</p>
+      <span class="label">Today · every survey</span>
+      <h3>One-line quality check</h3>
+      <div class="gate"><div class="gate-row"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>This survey passed its quality check.</span><span class="val num"></span></div></div>
+      <p class="footnote">BoloBit IQ checks response base, completion, verified signal and answer patterns, then gives you one plain line. The detailed criteria stay inside BoloBit.</p>
     </div>
     <div class="card" style="display:grid;gap:12px;align-content:start">
-      <span class="label">What changes in the next survey</span>
+      <span class="label">On the roadmap · not in the product yet</span>
       <div class="diff">
-        <div class="diff-row old"><span class="tag">THIS SURVEY · Q5</span><p>"What would make you more likely to stay, and how do you feel about us?" Two questions in one: 29 answers missed the signals it was tagged for.</p></div>
-        <div class="diff-row new"><span class="tag">NEXT SURVEY</span><p>Split into one sentiment question and one direct renewal question.</p></div>
-        <div class="diff-row old"><span class="tag">THIS SURVEY · COVERAGE</span><p>Behaviour was only 19% of verified signal.</p></div>
-        <div class="diff-row new"><span class="tag">NEXT SURVEY</span><p>Add a usage question on the feature your at-risk accounts stopped using.</p></div>
+        <div class="diff-row new"><span class="tag">OUTCOME TRACKING</span><p>Mark who stayed and who left, and see how BoloBit's predictions held, in plain counts: "Of 14 accounts flagged at risk, 9 left."</p></div>
+        <div class="diff-row new"><span class="tag">LEARNING FROM PAST SURVEYS</span><p>Carry what a survey proved, and what it missed, into the next one on the same subject.</p></div>
       </div>
-      <button class="btn primary" type="button" id="create-similar" style="justify-self:start">Create similar survey</button>
-      <p class="footnote" id="create-msg" hidden>In the product, this opens the survey builder with these changes already applied. This demo stops here.</p>
     </div>
   </div>
   <div class="workflow">
@@ -608,16 +687,15 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
       <span class="label coral">With BoloBit</span>
       <ol>
         <li>Describe what you want to learn</li>
-        <li>Launch with a link, QR code or email</li>
-        <li>Read the answer and act on the named next steps</li>
+        <li>Launch with a link, QR code or short code</li>
+        <li>See who is at risk, why, and what to do next</li>
       </ol>
-      <p class="footnote">Each survey then makes the next one better.</p>
-    </div>
+          </div>
   </div>
   <div class="closing">
     <span class="label coral">Remember BoloBit as</span>
     <h2>Describe it. Launch it. <em class="accent">Act on it.</em></h2>
-    <p style="color:var(--text-2);max-width:70ch">The easiest way to design and launch a survey, with the analysis and next steps ready the moment it closes.</p>
+    <p style="color:var(--text-2);max-width:70ch">Know which customers are at risk, and why, from your first survey.</p>
   </div>
   <div class="honesty">
     <strong>What is proven and what isn't yet</strong>
@@ -802,21 +880,28 @@ footer { border-top: 1px solid var(--b1); padding-block: 20px 28px; color: var(-
     holder.appendChild(b);
   });
 
-  /* ── Step 5: eligibility gate (rubric v1) ── */
-  var CHECK = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>';
-  var GATE = [
-    ['Enough responses', '34 · needs 30'],
-    ['Completion rate', '85% · needs 60%'],
-    ['Verified signal present', '168 answers'],
-    ['Answers are not all the same', '41% top choice · max 80%'],
-    ['At least two signals delivered', '3 of 3'],
-    ['The survey had one clear purpose', 'yes']
+  /* ── Step 4: BoloBit intuitive analysis, customer list folded behind a link ── */
+  var PEOPLE = [
+    ['Halvorsen Freight', 'critical', '★★', 'Unhappy (rated 1 of 5); disengaging ★★ (“Not at all”, no features used); may leave ★★ (“Probably not”).'],
+    ['Corbel Dental', 'critical', '★★', 'Unhappy (rated 2 of 5); disengaging (“Rarely”); may leave ★★ (“Probably not”, “we are reviewing options”).'],
+    ['Arden Labs', 'vocal', '★★★', 'Unhappy ★★★ (rated 2 of 5, “exports are too slow”, “support is slow”); actively using it (“Daily”); undecided about staying (“Not sure yet”).'],
+    ['Northwind Logistics', 'silent', '★★', 'Disengaging ★★ (“Rarely”, one feature used); undecided about staying (“Not sure yet”); not unhappy (rated 3 of 5).'],
+    ['Brightline Clinics', 'silent', '★★', 'Disengaging ★★ (“Not at all”, no features used); undecided about staying (“Not sure yet”); happy (rated 4 of 5).'],
+    ['Kestrel Studio', 'silent', '★★', 'Disengaging (“Rarely”); undecided about staying ★★ (“Not sure yet”, “depends on budget”); not unhappy (rated 3 of 5).'],
+    ['Sefton Retail', 'vocal', '★★', 'Unhappy ★★ (rated 2 of 5, “pricing went up”); actively using it (“Weekly”); undecided about staying (“Not sure yet”).'],
+    ['Ostrava Foods', 'silent', '', 'Disengaging (“Rarely”); undecided about staying (“Not sure yet”); not unhappy (rated 4 of 5).']
   ];
-  document.getElementById('gate').innerHTML = GATE.map(function (g) {
-    return '<div class="gate-row">' + CHECK + '<span>' + g[0] + '</span><span class="val num">' + g[1] + '</span></div>';
-  }).join('');
-  document.getElementById('create-similar').addEventListener('click', function () {
-    document.getElementById('create-msg').hidden = false;
+  var LBL = { critical: 'Critical', silent: 'Silent risk', vocal: 'Vocal risk' };
+  function starred(t) { return t.replace(/(★+)/g, '<span class="stars">$1</span>'); }
+  document.querySelector('#people .people').innerHTML = PEOPLE.map(function (p) {
+    return '<li class="person"><div class="person-head"><b>' + p[0] + '</b><span class="rchip">' + LBL[p[1]] + '</span>' + (p[2] ? '<span class="stars">' + p[2] + '</span>' : '') + '</div><p>' + starred(p[3]) + '</p></li>';
+  }).join('') + '<li class="person more">and 26 more customers in the full report</li>';
+  var tgl = document.getElementById('details-toggle');
+  tgl.addEventListener('click', function () {
+    var open = tgl.getAttribute('aria-expanded') === 'true';
+    tgl.setAttribute('aria-expanded', String(!open));
+    document.getElementById('people').hidden = open;
+    tgl.textContent = open ? 'Click here for details' : 'Hide details';
   });
 })();
 </script>
